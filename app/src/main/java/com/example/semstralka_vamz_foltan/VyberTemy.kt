@@ -54,7 +54,7 @@ fun VyberTemy(navController: NavController) {
             .fillMaxSize()
 
     ) {
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier.fillMaxSize().padding(top = 30.dp , bottom = 30.dp)) {
 
             Image(
                 painter = painterResource(id = R.drawable.matika),

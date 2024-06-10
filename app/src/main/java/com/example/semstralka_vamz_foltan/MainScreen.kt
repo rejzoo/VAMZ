@@ -29,93 +29,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-<<<<<<< HEAD
+
 
 @Composable
 fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
     VyberTemy(navController = navController)
-=======
-import com.example.semstralka_vamz_foltan.R
-
-@Composable
-fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
-    val image = R.drawable.matika
-    var firstName by remember { mutableStateOf("") }
-    var lastName by remember { mutableStateOf("") }
-
-    Surface(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(10.dp)
-    ) {
-        Box(modifier = Modifier.fillMaxSize()) {
-
-            Image(
-                painter = painterResource(id = image),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
-            )
-
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.7f))
-            )
-
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Text(
-                    text = "Štatistika",
-                    color = Color.White,
-                    fontSize = 40.sp,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center
-                )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                // First name input
-                TextField(
-                    value = firstName,
-                    onValueChange = { firstName = it },
-                    label = { Text("Meno") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 32.dp)
-                )
-
-                Spacer(modifier = Modifier.height(10.dp))
-
-                // Last name input
-                TextField(
-                    value = lastName,
-                    onValueChange = { lastName = it },
-                    label = { Text("Priezvisko") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 32.dp)
-                )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Button(onClick = {
-                    if (firstName.isNotEmpty() && lastName.isNotEmpty()) {
-                        navController.navigate("vyber_temy")
-                    } else {
-                        // Optional: Show a message that fields are required
-                    }
-                }) {
-                    Text("Uložiť")
-                }
-            }
-        }
-    }
->>>>>>> e96df9656ff26155a5c962aca8c71843b874e297
 }

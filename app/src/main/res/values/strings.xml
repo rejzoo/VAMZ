@@ -1,30 +1,90 @@
 <resources>
     <string name="app_name">Semstralka_VAMZ_Foltan</string>
+
     <string name="Tema_1">Základné pojmy štatistiky</string>
-    <string name="Tema_2">Jednorozmerná deskriptívna štatistika</string>
-    <string name="Tema_3">Náhodná premenná</string>
-    <string name="Tema_4">Rozdelenia pravdepodobnosti náhodnej premennej</string>
-    <string name="Tema_5">Odhady parametrov</string>
-    <string name="Tema_6">Testovanie štatistických hypotéz</string>
-    <string name="Tema_7">Korelačná a regresná analýza</string>
-    <string name="Tema_8">Analýza kvalitatívnych znakov</string>
+
+    <string name="Text_12">Hello</string>
     <string name="Priklad_1">V roku 2023 sa na istej fakulte uskutočnil prieskum. Študentov 1. ročníka Bc. stupňa štúdia sa pýtali na ich cyklistické zvyklosti. Dotazník bol rozdaný 341 študentom a vrátilo sa 311 kompletne vyplnených dotazníkov. Prostredníctvom dotazníka boli sledované nasledovné znaky. Typ bicykla: 1 = horský, 2 = cestný, 3 = gravel, 4 = e-bike, počet jázd za mesiac a nájazd km za mesiac </string>
     <string name="Priklad_2"> Uvedené úrovne štatistických znakov predstavujú istú hierarchiu od najnižšie postavených nominálnych štatistických znakov až po najvyššie kardinálne znaky. Čím je vyššia úroveň štatistického znaku (dát), tým viac matematických operácií je možné využiť pri ich analýze, a tým viac informácií o sledovanom znaku je možné z dát získať. Z tabuľky 1.2 vyplýva, že metódy vhodné pre nižšiu úroveň štatistických znakov sú použiteľné aj pre vyššiu úroveň štatistických znakov. Opačne to však neplatí. Pri spracovaní dát je zasa možné štatistické znaky s vyššou úrovňou. transformovať na znaky s nižšou úrovňou, aj keď pri tom dôjde k istej strate informácií. Ako príklad takejto transformácie poslúži štartovná listina pretekov Šprint Polom, kde je uvedený vek jednotlivých pretekárov, ktorý je pomerným štatistickým znakom. Usporiadatelia zvyčajne zaradia jednotlivých pretekárov do vekových kategórií (do 20 rokov, 21 až 30 rokov, atď.). Takouto kategorizáciou dôjde k strate informácií, lebo už nevieme, aký vek majú jednotliví pretekári. Vieme len, do ktorej vekovej kategórie patria a nemôžeme povedať aký je rozdiel či pomer veku jednotlivých pretekárov. Preto štatistický znak veková kategória je len ordinálny štatistický znak. Priradenie rôznofarebných štartovných čísel pretekárom podľa vekovej kategórie by znamenalo, že by sa pomerný štatistický znak vek transformoval na najnižšiu úroveň znaku, t. j. na nominálny znak farba štartovného čísla.</string>
-    <string name="Priklad_3"></string>
+    <string name="Priklad_3">Zaradenie ordinálnych štatistických znakov nie je také jednoznačné. Vzhľadom na to, že ich možné hodnoty sú zoraditeľné, majú v sebe okrem kvality aj istý aspekt kvantity. Na základe dominancie kvality v ich hodnotách sa väčšinou radia medzi kvalitatívne znaky, hlavne ak majú konečný počet realizácií.</string>
 
-    <string name="Priklad_4"></string>
-    <string name="Priklad_5"></string>
-    <string name="Priklad_6"></string>
+    <string name="Tema_2">Jednorozmerná deskriptívna štatistika</string>
+
+
+    <string name="Text_2">Ľudský mozog však je dosť efektívny pri spracovávaní dlhých a ešte aj nezoradených zoznamov údajov. Pri dátach minimálne ordinálnej úrovne sa za elementárny úkon považuje usporiadanie získaných hodnôt sledovaného znaku X podľa ich veľkosti od najmenšej hodnoty po najväčšiu, čím získame tzv. variačný rad x1 ≤ x2 ≤ … ≤ xn. V prípade nášho výskumne ladeného Hansa by variačný rad mal nasledujúcu podobu: 0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 8. Pri vyššej hodnote n však vytvorenie variačného radu neprispieva významne k prehľadnosti dát. Absolútna početnosť Výrazne prínosnejšie pre prehľadné spracovanie je prehliadnuť dáta s cieľom zistiť, aké rôzne hodnoty sa nachádzajú medzi nameranými hodnotami x1, x2, …, xn. Vyskytujúce sa hodnoty označme symbolmi a1, a2, …, ak; k ≤ n. Hodnoty ai , ak je to možné, sa aj usporiadajú podľa veľkosti. V prípade triedených dát je k identické s počtom tried, t. j. oveľa menšie ako n. Pri kardinálnych dátach je často k takmer rovné n, preto práve pri tomto type dát triedenie umožňuje ich prehľadné spracovanie. Každej nameranej hodnote ai sa priradí hodnota ni , pričom platí i=1…k ni = n1 + n2 + ... + nk = n 0 ≤ n.</string>
+
+    <string name="Priklad_4">Vášnivý cyklista Hans si robí mesačnú evidenciu počtu defektov, ktoré dostal počas jazdenia na bicykli. Jeho starostlivo získané údaje sú zapísané v tabuľke 2.1. Tabuľka 2.1 obsahuje surové dáta, ktoré je potrebné spracovať - zhrnúť do nejakej prehľadnej a koncentrovanej formy, čo je základnou úlohou deskriptívnej štatistiky. Kvalitné spracovanie dát následne umožní objaviť nejaké trendy či súvislosti, ktoré sú v nich obsiahnuté (úloha exploratívnej štatistiky). Hneď v úvode tejto kapitoly je potrebné zdôrazniť, že výsledky deskriptívnej štatistiky sa vzťahujú len na súbor popisovaných dát a neslúžia na zovšeobecnenie. </string>
+    <string name="Priklad_5">Máme údaje o 6500 pacientkach s vysokým tlakom. Vieme, že vo veku do 39 rokov malo vysoký tlak 231 pacientok, od 40 do 49 rokov (vrátane) 747 pacientok, od 50 do 59 rokov (vrátane) 1559 pacientok, od 60 do 69 rokov (vrátane) 1894 a vo veku 70 a viac rokov 2069 pacientok. Zostrojte histogram, ktorý znázorňuje relatívnu početnosť výskytu vysokého tlaku u žien.</string>
+    <string name="Priklad_6">Dáta z tabuľky 2.1, ktoré získal Hans, je možné v koncentrovanej podobe zapísať do tabuľky rozdelenia početnosti (tab. 2.3). Z tabuľky 2.3 ľahko a rýchlo zistíme napr. koľko najviac resp. najmenej defektov dostal Hans za mesiac (a1 = 0, respr. a9 = 1), prípadne aký počet defektov sa za dané obdobie vyskytol najčastejšie (a4 = 3, 7-krát).</string>
+
+    <string name="Tema_3">Náhodná premenná</string>
+
+    <string name="Text_3"></string>
 
     <string name="Priklad_7"></string>
     <string name="Priklad_8"></string>
     <string name="Priklad_9"></string>
 
+    <string name="Tema_4">Rozdelenia pravdepodobnosti náhodnej premennej</string>
+
+
+    <string name="Text_4"></string>
+
     <string name="Priklad_10"></string>
     <string name="Priklad_11"></string>
     <string name="Priklad_12"></string>
 
-    <string name="Text_1">Množinu všetkých potenciálnych objektov, o ktorých chceme prostredníctvom štatistického skúmania niečo vyriecť sa nazýva základný štatistický súbor alebo tiež populácia. Základný štatistický súbor (populáciu) môžu tvoriť napríklad cyklisti žijúci v určitom meste, bicykle jednej značky, rumy vyrobené v Karibiku, atď. Základný štatistický súbor je potrebné presne ohraničiť s ohľadom na ciele výskumu. Napr. chceme zistiť, či časté jazdenie na bicykli vedie u študentov k lepším študijným výsledkom. Ako je definovaný študent jazdiaci na bicykli? Ktorých študentov zahrnieme do výskumu? Len vysokoškolských? Len Slovákov? Berieme do úvahy len práve teraz aktívnych študentov alebo aj bývalých študentov? Toto sú dôležité otázky, ktoré musíme zodpovedať skôr, ako začneme samotné štatistické skúmanie, pretože presné definovanie (vymedzenie) základného súboru nás neskôr uchráni pred odchýlkami našich zistení od reality. Aby sme sa vyhli neželaným odchýlkam, musíme základný súbor vymedziť: • vecne - kto a čo má byť skúmaný; • priestorovo - kde sa má výskum uskutočniť; • časovo - v akom časovom úseku sa má výskum uskutočniť. Prvky štatistického súboru nazývame štatistické jednotky. Štatistická jednotka je základný prvok, na ktorom možno skúmať konkrétny prejav určitého hromadného javu. Štatistickou jednotkou môžu byť rôzne prvky, v závislosti od predmetu výskumu. Ak skúmame predajnosť bicyklov, tak štatistickou jednotkou je zákazník. V prípade výskumu predajnosti jednotlivých značiek bicyklov by bol štatistickou jednotkou bicykel. Ak niekoho zaujíma úspešnosť študentov prvého ročníka FRI UNIZA, tak práve títo študenti sa stanú štatistickou jednotkou. Vo všetkých uvedených prípadoch by štatistické jednotky vytvorili konečný základný štatistický súbor. V niektorých prípadoch môže byť základný štatistický súbor nekonečný alebo aj hypotetický. Študenti, ktorí splnia podmienky na pripustenie ku skúške zo Štatistiky sú potenciálni absolventi tohoto predmetu, teda tvoria hypotetickú populáciu. Možné časy čakania na príchod spoja zasa tvoria nekonečný základný štatistický súbor.</string>
+    <string name="Tema_5">Odhady parametrov</string>
+
+
+    <string name="Text_5"></string>
+
+    <string name="Priklad_13"></string>
+    <string name="Priklad_14"></string>
+    <string name="Priklad_15"></string>
+
+
+    <string name="Tema_6">Testovanie štatistických hypotéz</string>
+
+
+    <string name="Text_6"></string>
+
+    <string name="Priklad_16"></string>
+    <string name="Priklad_17"></string>
+    <string name="Priklad_18"></string>
+
+
+    <string name="Tema_7">Korelačná a regresná analýza</string>
+
+
+    <string name="Text_7"></string>
+
+    <string name="Priklad_19"></string>
+    <string name="Priklad_20"></string>
+    <string name="Priklad_21"></string>
+
+
+
+    <string name="Tema_8">Analýza kvalitatívnych znakov</string>
+
+
+    <string name="Text_8"></string>
+
+    <string name="Priklad_22"></string>
+    <string name="Priklad_23"></string>
+    <string name="Priklad_24"></string>
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>
 
 
