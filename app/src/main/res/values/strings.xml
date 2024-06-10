@@ -3,7 +3,14 @@
 
     <string name="Tema_1">Základné pojmy štatistiky</string>
 
+    <string name="Text_11">Hello</string>
     <string name="Text_12">Hello</string>
+    <string name="Text_13">Hello</string>
+    <string name="Text_14">Hello</string>
+    <string name="Text_15">Hello</string>
+
+
+
     <string name="Priklad_1">V roku 2023 sa na istej fakulte uskutočnil prieskum. Študentov 1. ročníka Bc. stupňa štúdia sa pýtali na ich cyklistické zvyklosti. Dotazník bol rozdaný 341 študentom a vrátilo sa 311 kompletne vyplnených dotazníkov. Prostredníctvom dotazníka boli sledované nasledovné znaky. Typ bicykla: 1 = horský, 2 = cestný, 3 = gravel, 4 = e-bike, počet jázd za mesiac a nájazd km za mesiac </string>
     <string name="Priklad_2"> Uvedené úrovne štatistických znakov predstavujú istú hierarchiu od najnižšie postavených nominálnych štatistických znakov až po najvyššie kardinálne znaky. Čím je vyššia úroveň štatistického znaku (dát), tým viac matematických operácií je možné využiť pri ich analýze, a tým viac informácií o sledovanom znaku je možné z dát získať. Z tabuľky 1.2 vyplýva, že metódy vhodné pre nižšiu úroveň štatistických znakov sú použiteľné aj pre vyššiu úroveň štatistických znakov. Opačne to však neplatí. Pri spracovaní dát je zasa možné štatistické znaky s vyššou úrovňou. transformovať na znaky s nižšou úrovňou, aj keď pri tom dôjde k istej strate informácií. Ako príklad takejto transformácie poslúži štartovná listina pretekov Šprint Polom, kde je uvedený vek jednotlivých pretekárov, ktorý je pomerným štatistickým znakom. Usporiadatelia zvyčajne zaradia jednotlivých pretekárov do vekových kategórií (do 20 rokov, 21 až 30 rokov, atď.). Takouto kategorizáciou dôjde k strate informácií, lebo už nevieme, aký vek majú jednotliví pretekári. Vieme len, do ktorej vekovej kategórie patria a nemôžeme povedať aký je rozdiel či pomer veku jednotlivých pretekárov. Preto štatistický znak veková kategória je len ordinálny štatistický znak. Priradenie rôznofarebných štartovných čísel pretekárom podľa vekovej kategórie by znamenalo, že by sa pomerný štatistický znak vek transformoval na najnižšiu úroveň znaku, t. j. na nominálny znak farba štartovného čísla.</string>
     <string name="Priklad_3">Zaradenie ordinálnych štatistických znakov nie je také jednoznačné. Vzhľadom na to, že ich možné hodnoty sú zoraditeľné, majú v sebe okrem kvality aj istý aspekt kvantity. Na základe dominancie kvality v ich hodnotách sa väčšinou radia medzi kvalitatívne znaky, hlavne ak majú konečný počet realizácií.</string>

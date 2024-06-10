@@ -23,19 +23,26 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.semstralka_vamz_foltan.ui.theme.DataPriklad
 import com.example.semstralka_vamz_foltan.ui.theme.DataTema
 import com.example.semstralka_vamz_foltan.ui.theme.DataText
-import com.example.semstralka_vamz_foltan.ui.theme.Priklad
+
 
 
 @Composable
 fun TemaScreen(navController: NavController, topic: Int?) {
-    val data = DataTema(topic, LocalContext.current)
-    val name = data.topicName
+    val dataTema = DataTema(topic, LocalContext.current)
+    val name = dataTema.topicName
+    val list: MutableList<Int> = mutableListOf()
+    var podTema = DataText(topic , 1, LocalContext.current)
+    var index = 1
+
+    while (podTema.text != "") {
+        list.add(index)
+        index++
+        podTema = DataText(topic , index , LocalContext.current)
 
 
-
+    }
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -54,9 +61,13 @@ fun TemaScreen(navController: NavController, topic: Int?) {
         )
     }
 
-    Box(modifier = Modifier.fillMaxSize().padding(top = 30.dp, bottom = 30.dp)) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .padding(top = 30.dp, bottom = 30.dp)) {
         LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(15.dp)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(15.dp)
         ) {
             item {
                 Box(
@@ -78,9 +89,8 @@ fun TemaScreen(navController: NavController, topic: Int?) {
 
             }
 
-            item {
-
-                Text(text = DataText(1,2, LocalContext.current).text)
+            items(list.size) { podTema ->
+                PodTema(topic, podTema)
             }
 
 
@@ -136,7 +146,37 @@ fun TemaScreen(navController: NavController, topic: Int?) {
 }
 
 @Composable
-fun PodTema(topic: Int) {
+fun PodTema(topic: Int?, podTema: Int) {
+    val data = DataText(topic, podTema, LocalContext.current)
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.White)
+            .padding(15.dp)
+    ) {
+        Text(
+            text = data.text,
+            fontSize = 15.sp,
+            textAlign = TextAlign.Left,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+    }
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.White)
+            .padding(15.dp)
+    ) {
+
+        Image(painter = painterResource(id = data.idObrazku),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
+    }
+
+    Spacer(modifier = Modifier.height(10.dp))
 
 }
 
