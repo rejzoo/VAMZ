@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.semstralka_vamz_foltan.R
-import com.example.semstralka_vamz_foltan.TopicItem
+
 
 @Composable
 fun Kalkulacka(navController: NavController , topic: Int?) {
