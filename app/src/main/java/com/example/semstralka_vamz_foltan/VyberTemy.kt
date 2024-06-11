@@ -26,6 +26,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -54,7 +55,7 @@ fun VyberTemy(navController: NavController) {
             .fillMaxSize()
 
     ) {
-        Box(modifier = Modifier.fillMaxSize().padding(top = 30.dp , bottom = 30.dp)) {
+        Box(modifier = Modifier.fillMaxSize()) {
 
             Image(
                 painter = painterResource(id = R.drawable.matika),
@@ -72,7 +73,7 @@ fun VyberTemy(navController: NavController) {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp)
+                    .padding(top = 30.dp, bottom = 50.dp, start = 16.dp , end = 16.dp),
             ) {
                 items(topics) { topic ->
                     TopicItem(topic) {
@@ -80,6 +81,7 @@ fun VyberTemy(navController: NavController) {
                     }
                 }
             }
+
         }
     }
 }
@@ -92,13 +94,17 @@ fun TopicItem(topicId: Int, onClick: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .padding(top = 8.dp)
+
             .background(Color.White.copy(alpha = 0.9f))
             .clickable(onClick = onClick)
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = name, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        Text(text = name,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth())
     }
 }
 

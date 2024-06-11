@@ -83,9 +83,7 @@ fun TemaScreen(navController: NavController, topic: Int?) {
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
-
                 Spacer(modifier = Modifier.height(30.dp))
-
 
             }
 
@@ -148,32 +146,39 @@ fun TemaScreen(navController: NavController, topic: Int?) {
 @Composable
 fun PodTema(topic: Int?, podTema: Int) {
     val data = DataText(topic, podTema, LocalContext.current)
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.White)
-            .padding(15.dp)
-    ) {
-        Text(
-            text = data.text,
-            fontSize = 15.sp,
-            textAlign = TextAlign.Left,
-            modifier = Modifier.fillMaxWidth()
-        )
+    if (data.text != "") {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.White)
+                .padding(15.dp)
+        ) {
+            Text(
+                text = data.text,
+                fontSize = 15.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier.fillMaxWidth()
+            )
 
+        }
     }
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.White)
-            .padding(15.dp)
-    ) {
+    if (data.idObrazku != 0) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.White)
+                .padding(15.dp)
+        ) {
 
-        Image(painter = painterResource(id = data.idObrazku),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize()
-        )
+            Image(
+                painter = painterResource(id = data.idObrazku),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
+            )
+
+
+        }
     }
 
     Spacer(modifier = Modifier.height(10.dp))

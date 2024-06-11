@@ -5,11 +5,16 @@ import com.example.semstralka_vamz_foltan.R
 
 data class DataText(val topicNumber: Int?, val textNumber: Number, val context: Context) {
 
+
     val text: String = getTextFromRes()
-    val idObrazku: Int = getIdObrazku(topicNumber)
+    val idObrazku: Int = getIdObrazkuFromRes()
 
     private fun getTextFromRes(): String {
-        val resourceId = context.resources.getIdentifier("Text_${topicNumber}${textNumber}", "string", context.packageName)
+        val resourceId = context.resources.getIdentifier(
+            "Text_${topicNumber}${textNumber}",
+            "string",
+            context.packageName
+        )
         return if (resourceId != 0) {
             context.getString(resourceId)
         } else {
@@ -17,15 +22,20 @@ data class DataText(val topicNumber: Int?, val textNumber: Number, val context: 
         }
     }
 
-    private fun getIdObrazku(number: Int?): Int {
-        val resourceId = context.resources.getIdentifier("obrazok_${topicNumber}${textNumber}", "string", context.packageName)
-        return if (resourceId != 0) {
-            context.getString(resourceId)
+    private fun getIdObrazkuFromRes(): Int {
+        val idObrazku = context.resources.getIdentifier(
+            "obrazok_${topicNumber}${textNumber}",
+            "drawable",
+            context.packageName)
+        return if (idObrazku != 0) {
+            idObrazku
         } else {
-            ""
+            0
         }
     }
 }
+
+
 
 
 
