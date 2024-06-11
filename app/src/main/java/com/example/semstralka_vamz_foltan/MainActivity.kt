@@ -19,7 +19,6 @@ import androidx.navigation.navArgument
 
 import com.example.semstralka_vamz_foltan.sampledata.DataPriklad
 import com.example.semstralka_vamz_foltan.ui.theme.Kalkulacka
-import com.example.semstralka_vamz_foltan.ui.theme.MainScreen
 import com.example.semstralka_vamz_foltan.ui.theme.Priklad
 import com.example.semstralka_vamz_foltan.ui.theme.Semstralka_VAMZ_FoltanTheme
 import com.example.semstralka_vamz_foltan.ui.theme.TemaScreen
@@ -34,8 +33,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Semstralka_VAMZ_FoltanTheme {
                 val navController = rememberNavController()
-                NavHost(navController, startDestination = "main_screen") {
-                    composable("main_screen") { MainScreen(navController) }
+                NavHost(navController, startDestination = "vyber_temy") {
                     composable("vyber_temy") { VyberTemy(navController) }
                     composable(
 

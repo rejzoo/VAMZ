@@ -78,7 +78,7 @@ fun Kalkulacka() {
                     ) {
                         Column {
                             Text(
-                                text = "Binomicke rozdelenie",
+                                text = "Binomické rozdelenie",
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.Center,
@@ -128,7 +128,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokBin",
+                                    text = "Výsledok:  $vysledokBin",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -140,7 +140,7 @@ fun Kalkulacka() {
                                     val y = textValueBin3.toIntOrNull()
                                     vysledokBin = zaokruhliNaDveDesatinneCisla(binomDist(x, z, y))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -206,7 +206,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokGeo",
+                                    text = "Výsledok:  $vysledokGeo",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -218,7 +218,7 @@ fun Kalkulacka() {
 
                                     vysledokGeo = zaokruhliNaDveDesatinneCisla(geoDist(a, b))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -305,7 +305,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokHypGeo",
+                                    text = "Výsledok:  $vysledokHypGeo",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -319,7 +319,7 @@ fun Kalkulacka() {
 
                                     vysledokHypGeo = zaokruhliNaDveDesatinneCisla(hypGeoDist(a, b, c, d))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -384,7 +384,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokPoi",
+                                    text = "Výsledok:  $vysledokPoi",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -396,7 +396,7 @@ fun Kalkulacka() {
 
                                     vysledokPoi = zaokruhliNaDveDesatinneCisla(poissonDist(a, b))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -419,7 +419,7 @@ fun Kalkulacka() {
                     ) {
                         Column {
                             Text(
-                                text = "Normalne rozdelenie",
+                                text = "Normálne rozdelenie",
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.Center,
@@ -471,7 +471,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokNor",
+                                    text = "Výsledok:  $vysledokNor",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -484,7 +484,7 @@ fun Kalkulacka() {
 
                                     vysledokNor = zaokruhliNaDveDesatinneCisla(normalDist(a, b , c))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -559,7 +559,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokRov",
+                                    text = "Výsledok:  $vysledokRov",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -572,7 +572,7 @@ fun Kalkulacka() {
 
                                     vysledokRov = zaokruhliNaDveDesatinneCisla(uniformDist(a, b , c))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -639,7 +639,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokStud",
+                                    text = "Výsledok:  $vysledokStud",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -652,7 +652,7 @@ fun Kalkulacka() {
 
                                     vysledokStud = zaokruhliNaDveDesatinneCisla(studentovoRozdelenie(a, b))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -725,7 +725,7 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledokFis",
+                                    text = "Výsledok:  $vysledokFis",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
@@ -738,7 +738,7 @@ fun Kalkulacka() {
 
                                     vysledokFis = zaokruhliNaDveDesatinneCisla(fisherovoSnedecorovoRozdelenie(a, b, c))
                                 }) {
-                                    Text(text = "Vypocitaj")
+                                    Text(text = "Vypočítaj")
                                 }
                             }
                         }
@@ -833,6 +833,5 @@ fun fisherovoSnedecorovoRozdelenie(df1: Int?, df2: Int?, x: Double?): Double {
 }
 
 fun zaokruhliNaDveDesatinneCisla(cislo: Double): Double {
-    val format = DecimalFormat("#.##")
-    return format.format(cislo).toDouble()
+    return Math.round(cislo * 100) / 100.0
 }
