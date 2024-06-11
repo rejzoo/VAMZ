@@ -81,39 +81,57 @@
     <string name="Text_59"></string>
 
     <string name="Priklad_13">Po zadaní parametrov µ ∈ R a σ > 0 je funkcia f(x|µ, σ) určená jednoznačne. Gaussova krivka je na obrázku 2.14</string>
-    <string name="Priklad_14"></string>
-    <string name="Priklad_15"></string>
+    <string name="Priklad_14">Príklady ako parameter µ ovplyvňuje tvar Gaussovej krivky</string>
+    <string name="Priklad_15">Závislosť tvaru Gaussovej krivky od parametra σ</string>
 
 
-    <string name="Tema_6">Testovanie štatistických hypotéz</string>
+    <string name="Tema_6">Náhodná premenná</string>
 
 
-    <string name="Text_6"></string>
+    <string name="Text_61">Náhodná premenná je definovaná tak, že jej realizácie sú len čísla. Preto, ak pri náhodnom pokuse sledujeme premennú nominálnej alebo ordinálnej úrovne, musíme jej hodnotám priradiť čísla. Tieto čísla sa volia buď na základe logického kontextu (výsledok hodu kockou zapíšeme ako počet bodiek na hornej stene kocky) alebo ľubovoľne (nastanie defektu - 1, nenastanie - 0). V tomto duchu náhodná premenná X predstavuje funkciu, ktorá každému možnému výsledku náhodného pokusu priradí číslo. Pre lepšie porozumenie podstaty náhodnej premennej uvádzame nasledujúci príklad.</string>
+    <string name="Text_62">Diskrétna náhodná premenná je analogický pojem ku diskrétnemu štatistickému znaku (premennej). Príkladom diskrétnej náhodnej premennej je výsledok hodu hracou kockou, počet hodov kockou po padnutie prvej šestky, počet uhádnutých čísel v lotérii, počet vypitých rumov za semester, …</string>
+    <string name="Text_63">Zápis P(X = xi) = pi interpretujeme: pravdepodobnosť, že náhodná premenná X má realizáciu (hodnotu) xi , je pi . A to je zmysel i cieľ pravdepodobnostnej funkcie, aby nás informovala o šanciach výskytu jednotlivých realizácií náhodnej premennej X.</string>
+    <string name="Text_64">Hodnoty pravdepodobnostnej funkcie p(xi) nám udávajú, aká je pravdepodobnosť nastania alebo nenastania jednotlivých realizácií xi diskrétnej náhodnej premennej X, t. j. pi = P(X = xi) ⇒ (1 − pi) = P(X ̸= xi). V praktickom živote potrebujeme aj vedieť, aká je pravdepodobnosť, že realizácia náhodnej premennej neprekročí nejakú hodnotu alebo pod ňu neklesne, prípadne, že bude z nejakého intervalu. Tieto prípady sa dajú symbolicky zapísať v tvare P(X ≤ x), P(X ≥ x), P(a ≤ X ≤ b). Pravdepodobnostná funkcia na takéto otázky nedáva priamo odpoveď, ale z popis</string>
+    <string name="Text_65">Štatistický znak (premenná) X sa nazýva spojitý, ak môže nadobudnúť ľubovoľnú hodnotu z nejakého intervalu ⟨a, b⟩. Ak sú hodnoty premennej X výsledky náhodného pokusu, tak sa premenná X môže interpretovať ako spojitá náhodná premenná</string>
+    <string name="Text_66">Distribučná funkcia F(x): </string>
+    <string name="Text_67">Hodnota distribučnej funkcie spojitej náhodnej premennej je obsah plochy pod krivkou hustoty rozdelenia pravdepodobnosti f(x) od −∞ po hodnotu x. Základné vlastnosti distribučnej funkcie spojitej náhodnej premennej F(x) popisuje nasledujúca veta.</string>
+    <string name="Text_68">Pri náhodnom pokuse môžeme sledovať aj viac štatistických znakov a teda aj viac náhodných premenných. V mnohých prípadoch sa sledované náhodné premenné navzájom ovplyvňujú, t. j. náhodné premenné sú navzájom závislé. Príkladom závislých náhodných premenných je množstvo vypitého iontového nápoja počas cyklovýjazdu a vonkajšia teplota. V iných prípadoch sú náhodné premenné navzájom nezávislé, pretože pravdepodobnosť nastania realizácií každej z nich nie je ovplyvnená realizáciami inej náhodnej premennej. Príkladom nezávislých náhodných premenných je opotrebovanie predného a zadného plášťa na bicykli. Pre formálnu definíciu nezávislosti náhodných premenných využijeme myšlienku nezávislosti náhodných javov.</string>
+    <string name="Text_69">Očakávaná hodnota E(X) diskrétnej náhodnej premennej X je vážený stred jej možných hodnôt, pričom váhami sú pravdepodobnosti pi jednotlivých hodnôt náhodnej premennej. Preto má zmysel ju určovať len vtedy, ak náhodná premenná zodpovedá metrickému štatistickému znaku.</string>
 
-    <string name="Priklad_16"></string>
-    <string name="Priklad_17"></string>
-    <string name="Priklad_18"></string>
-
-
-    <string name="Tema_7">Korelačná a regresná analýza</string>
-
-
-    <string name="Text_7"></string>
-
-    <string name="Priklad_19"></string>
-    <string name="Priklad_20"></string>
-    <string name="Priklad_21"></string>
+    <string name="Priklad_16">Hádžeme dvakrát mincou a sledujeme, koľkokrát padne znak.</string>
+    <string name="Priklad_17">Hádžeme dvakrát mincou. Nech náhodná premenná X znamená počet padnutých znakov. Určte distribučnú funkciu a znázornite ju aj graficky. Riešenie: Z príkladu 3.1 vieme, že diskrétna náhodná premenná X má realizácie TX = {0, 1, 2} s pravdepodobnosťami uvedenými v tabuľke 3.3.</string>
+    <string name="Priklad_18">Cyklista Hans má prísť do Ellmau v čase od 13:26 do 14:26 vrátane, aby si trochu oddýchol. Aká je pravdepodobnosť, že príde od 13:56 do 14:11 vrátane?</string>
 
 
+    <string name="Tema_7">Nezávislosť náhodnej premennej</string>
 
-    <string name="Tema_8">Analýza kvalitatívnych znakov</string>
+
+    <string name="Text_71">Vlastnosti dvoch náhodných premenných X a Y</string>
+    <string name="Text_72">Disperzia (rozptyl, variancia) a smerodajná odchýlka sú najdôležitejšie charakteristiky variability a ich výpočet je analogický s ich empirickými ekvivalentami. Pri náhodnej premennej sa pred názvom rozptyl uprednostňuje názov disperzia. Z diskrétnej štatistiky vieme, že rozptyl bol definovaný ako priemerná kvadratická odchýlka nameraných hodnôt štatistického znaku X od aritmetického priemeru. Ak túto myšlienku aplikujeme na disperziu D(X) náhodnej premennej, tak dostávame rovnosť</string>
+    <string name="Text_73">S rastúcim počtom opakovaní náhodného pokusu aj pre rozptyl platí s 2 → D(X). Nasledujúca veta obsahuje dôležité vlastnosti disperzie.</string>
+    <string name="Text_74">V prípade empirických dát bola modusom xmod hodnota xi s najväčšou absolútnou (relatívnou) početnosťou. Pre náhodnú premennú je modus definovaný podobne. Modus je jednoznačne určený, ak funkcia f(x) resp. p(x) má jedno globálne maximum a žiadne ďalšie lokálne maximá. Ďalším dôležitým parametrom je medián xmed, ktorý je špeciálnym prípadom kvantilu. p-kvantil udáva hodnotu náhodnej premennej, pre ktorú má distribučná funkcia hodnotu p ∈ (0, 1) t.j. pravdepodobnosť, že náhodná premenná neprekročí hodnotu xp je práve p. Teda platí F(xp) = P(X ≤ xp) = p. Kvantily diskrétnej náhodnej premennej v praxi zvyčajne neurčujeme (ich určenie nie je jednoznačné). Preto uvádzame definíciu len pre spojité náhodné premenné.</string>
 
 
-    <string name="Text_8"></string>
 
-    <string name="Priklad_22"></string>
-    <string name="Priklad_23"></string>
-    <string name="Priklad_24"></string>
+    <string name="Priklad_19">Zahrajme sa hru. Hádže sa raz mincou. Ak padne znak, dostanete 10e, ak hodnota, tak nedostanete nič. Poplatok za jednu hru sú 4e. Je táto hra pre vás výhodná?</string>
+    <string name="Priklad_20">Pri trati sú na rôznych miestach 4 mechanici s občerstvením. Pravdepodobnosť, že sa cyklistovi podarí zobrať si od mechanika občerstvenie, je 0.7. Cyklista sa snaží zobrať si občerstvenie od prvej možnosti, až kým sa mu to nepodarí. Nájdite distribučnú funkciu počtu potrebných pokusov na zobratie si občerstvenia. Určte aj strednú hodnotu a smerodajnú odchýlku</string>
+    <string name="Priklad_21">Pri výrobe brzdových platničiek do MTB bŕzd udáva výrobca, že hrúbka brzdnej hmoty sa líši maximálne o 1 mm od predpísanej hrúbky. Nájdite funkciu rozdelenia hustoty a vypočítajte jej parametre.</string>
+
+    <string name="Tema_8">Rozdelenia náhodnej premennej</string>
+
+    <string name="Text_81">Bernoulliho experiment teoreticky popisuje Bernoulliho (alternatívne) rozdelenie pravdepodobnosti s jedným parametrom, ktorým je pravdepodobnosť nastania sledovaného javu π. Označujeme ho symbolom Alt(π) a jeho pravdepodobnostná funkcia p(xi) má analytické vyjadrenie</string>
+    <string name="Text_82">Viacnásobné opakovanie Bernoulliho pokusu za rovnakých podmienok modeluje binomické rozdelenie pravdepodobnosti, ktoré označujeme symbolom Bi(n, π). Binomické rozdelenie pravdepodobnosti závisí od dvoch parametrov: n - počet opakovaní Bernoulliho pokusu; π - pravdepodobnosť nastania sledovaného javu A, t. j. P(A) = π. Skutočnosť, že náhodná premenná X má binomické rozdelenie, vyjadríme symbolickým zápisom X ∼ Bi(n, π).</string>
+    <string name="Text_83">Geometrické rozdelenie - Cyklistovi Hansovi sa stáva, že si na niektorý deň naplánuje krásnu celodennú cyklotrasu. Ráno, v určený deň, sa zobudí a zistí, že prší. Keďže nemá rád bicyklovanie v daždi, rozhodne sa počkať, kým neprestane pršať. Každú hodinu príde k oknu a zisťuje, či už konečne prestalo pršať. Hansove zisťovanie stavu počasia môžeme považovať za opakovanie Bernoulliho pokusu, a to dovtedy, kým nenastane želaný jav A, v našom prípade „neprší“. Pre jednoduchosť budeme predpokladať, že pravdepodobnosť, že neprší je π = 0.5. Hansove čakanie na slniečko možno modelovať tzv. geometrické rozdelenie pravdepodobnosti s jedným parametrom π - pravdepodobnosť nastania javu A. Geometrické rozdelenie pravdepodobnosti označujeme symbolom Ge(π).</string>
+    <string name="Text_84">Vráťme sa k príkladu 4.1, kde sme zo skrine, v ktorej boli 3 žlté a 7 červených dresov, vybrali jeden z nich. Jednalo sa o jeden Bernoulliho pokus a náhodná premenná mala dve realizácie TX = {1(žltý), 0(červený)} s alternatívnym rozdelením pravdepodobnosti. Iný variant vyberania zo skrine je, že z nej náhodne vyberieme 6-krát dres (6 opakovaní Bernoulliho pokusu za nezmenených podmienok), zapíšme si jeho farbu a vrátime ho späť. Bude nás zaujímať náhodná premenná X: „Počet žltých dresov“. V tomto prípade má náhodná premenná X binomické rozdelenie s realizáciami TX = {0, 1, 2, 3}. Ak by sme po výbere dres nevrátili do skrine, tak jednotlivé Bernoulliho pokusy sú závislé a náhodná premenná by už nemala binomické rozdelenie pravdepodobnosti, ale hypergeometrické rozdelenie pravdepodobnosti, ktoré má tri parametre: N - rozsah základného súboru, M - počet možných výskytov sledovaného javu A, n - počet opakovaní Bernoulliho pokusu. V prípade výberu zo skrine by mali uvedené parametre nasledovné hodnoty N = 10, M = 3, n = 6.</string>
+    <string name="Text_85">Binomické a hypergeometrické rozdelenie má náhodná premenná, ktorej realizácie hovoria, ako často pri n-násobnom opakovaní Bernoulliho pokusu nastane jav A. Jej množina realizácií TX je konečná zhora ohraničená číslom n. Geometrické rozdelenie má náhodná premenná, ktorej realizácie hovoria, ako „dlho“ je potrebné čakať, kým nastane jav A. V tomto prípade platí TX = N. V praxi sa vyskytujú aj prípady, kedy sledujeme, koľkokrát nastane jav A v rámci pevne stanoveného časového intervalu alebo miesta. Rozdelenie pravdepodobnosti náhodnej premennej potom modeluje Poissonovo rozdelenie pravdepodobnosti. Príkladom takéhoto prípadu sú počet reklamácií bicykla počas záručnej doby, počet objednávok servisu zadného tlmiča za mesiac, alebo počet úrazov horského cyklistu počas mesiaca január. Časové obdobie, kedy počítame výskyty javu A vždy predstavuje interval dĺžky ∆t = 1.</string>
+    <string name="Text_86">Z bežného života je odpozorované, že spojité (kvázi–spojité) náhodné premenné, ktorých realizácie sú ovplyvnené väčším počtom náhodných faktorov, majú relatívne početnosti viac–menej symetricky, ale nie rovnomerne rozdelené okolo nejakej hodnoty (priemeru). Nikoho zrejme neprekvapí tvrdenie, že je väčšia pravdepodobnosť stretnúť na ulici človeka priemernej výšky ako človeka extrémne nízkeho alebo extrémne vysokého. Rovnako je to aj pri odchýlkach výrobných strojov od normy daného výrobku… So stúpajúcim počtom „respondentov“ sa rozdelenie početnosti jednotlivých hodnôt sledovaného znaku približuje ku Gaussovej krivke, ktorej vlastnosti sú popísané už v prvej kapitole. Náhodné javy, aproximovatelné Gaussovou krivkou teoreticky modeluje normálne rozdelenie pravdepodobnosti, ktoré prvýkrát popísal Abraham de Moivre (1667 – 1754), ale je dnes spájané s menom Carl Friedrich Gauss (1777 – 1855). Normálne (Gaussovo) rozdelenie pravdepodobnosti je najdôležitejšie rozdelenie pravdepodobnosti v štatistike. Mnohé javy, ktorých výsledok je v rukách matky prírody, sú do značnej miery dobre popísané práve týmto rozdelením, preto sa často nazýva matka všetkých rozdelení. Dokonca aj niektoré diskrétne rozdelenia, ako sú napr. binomické, Poissonovo, hypergeometrické sú za istých okolností dobre aproximovatelné normálnym rozdelením.</string>
+    <string name="Text_87">Distribučná funkcia štandardizovaného normálneho rozdelenia sa označuje symbolom Φ(Z) a platí</string>
+    <string name="Text_88">Rovnomerné rozdelenie - Hans prešiel na bicykli krásnu trasu zo St. Johann in Tirol do Innsbruku a chce sa vrátiť vlakom naspäť. Keď si kupoval lístok, tak sa dozvedel, že vlak chodí každých 20 minút. Povedal si, že sa mu neoplatí hľadať cestovný poriadok a išiel rovno na nástupište. Doba čakania X na príchod vlaku je v takomto prípade náhodná premenná, ktorej realizácie sú z intervalu ⟨0, 20⟩. Je zrejmé, že pravdepodobnosť príchodu vlaku je rovnaká pre rovnako dlhé časové intervaly, t. j. P(0 ≤ X ≤ 4) = P(7 ≤ X ≤ 11) = P(10 ≤ X ≤ 14) = P(16 ≤ X ≤ 20). V takomto prípade hovoríme o rovnomernom rozdelení pravdepodobnosti spojitej náhodnej premennej X.</string>
+    <string name="Text_89">Rovnomerné rozdelenie pravdepodobnosti má aj svoju diskrétnu variantu. Diskrétnu náhodnú premennú s rovnomerným rozdelením priraďujeme náhodnému pokusu, ktorý má konečný počet n rovnako možných výsledkov.</string>
+
+    <string name="Priklad_22">Zo skrine vyberieme náhodne cyklodres. V tej vzácnej skrini máme 3 žlté a 7 červených cyklodresov. Vytvorte funkciu, ktorá modeluje rozdelenie pravdepodobnosti výsledku výberu cyklodresu.</string>
+    <string name="Priklad_23">V závode na výrobu MTB hydraulických bŕzd majú výstupnú kontrolu. Jej úlohou je testovať, či sú brzdy správne utesnené. Z dlhodobého sledovania vedia, že z mesačnej produkcie 2000 bŕzd býva nesprávne utesnených 11. Aká je pravdepodobnosť, že z 28 vybraných bŕzd budú 2 zle utesnené?</string>
+    <string name="Priklad_24">Firma Continental vyrobí denne 16000 kusov bezdušových MTB plášťov Cross King 29”. Pravdepodobnosť, že medzi nimi bude nepodarok je π = 0.0001. Aká je pravdepodobnosť, že za dnes vyrobia 4 nepodarky?</string>
 
 
 
