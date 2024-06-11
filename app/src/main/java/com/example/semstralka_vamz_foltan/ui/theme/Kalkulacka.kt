@@ -32,13 +32,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.semstralka_vamz_foltan.R
 import kotlin.math.exp
+import kotlin.math.ln
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 @Composable
 fun Kalkulacka() {
-    var vysledok by remember { mutableStateOf(0.0) }
-    var textValue by remember { mutableStateOf("") }
-    var textValue2 by remember { mutableStateOf("") }
-    var textValue3 by remember { mutableStateOf("") }
+    var vysledokBin by remember { mutableStateOf(0.0) }
+    var textValueBin by remember { mutableStateOf("") }
+    var textValueBin2 by remember { mutableStateOf("") }
+    var textValueBin3 by remember { mutableStateOf("") }
 
     Surface(
         modifier = Modifier
@@ -86,8 +89,8 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 TextField(
-                                    value = textValue,
-                                    onValueChange = { textValue = it },
+                                    value = textValueBin,
+                                    onValueChange = { textValueBin = it },
                                     label = { Text("n") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -96,8 +99,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue2,
-                                    onValueChange = { textValue2 = it },
+                                    value = textValueBin2,
+                                    onValueChange = { textValueBin2 = it },
                                     label = { Text("Pi") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -106,8 +109,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue3,
-                                    onValueChange = { textValue3 = it },
+                                    value = textValueBin3,
+                                    onValueChange = { textValueBin3 = it },
                                     label = { Text("Počet") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -121,17 +124,17 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledok",
+                                    text = "Vysledok:  $vysledokBin",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
                                 )
 
                                 Button(onClick = {
-                                    val x = textValue.toIntOrNull() ?: 0
-                                    val z = textValue2.toDouble()
-                                    val y = textValue3.toIntOrNull() ?: 0
-                                    vysledok = BinomDist(x, z, y)
+                                    val x = textValueBin.toIntOrNull() ?: 0
+                                    val z = textValueBin2.toDouble()
+                                    val y = textValueBin3.toIntOrNull() ?: 0
+                                    vysledokBin = binomDist(x, z, y)
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
@@ -141,9 +144,9 @@ fun Kalkulacka() {
                 }
 
                 item {
-                    var vysledok1 by remember { mutableStateOf(0.0) }
-                    var textValue4 by remember { mutableStateOf("") }
-                    var textValue5 by remember { mutableStateOf("") }
+                    var vysledokGeo by remember { mutableStateOf(0.0) }
+                    var textValueGeo1 by remember { mutableStateOf("") }
+                    var textValueGeo2 by remember { mutableStateOf("") }
 
 
                     Box(
@@ -168,8 +171,8 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 TextField(
-                                    value = textValue4,
-                                    onValueChange = { textValue4 = it },
+                                    value = textValueGeo1,
+                                    onValueChange = { textValueGeo1 = it },
                                     label = { Text("Pi") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -178,8 +181,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue5,
-                                    onValueChange = { textValue5 = it },
+                                    value = textValueGeo2,
+                                    onValueChange = { textValueGeo2 = it },
                                     label = { Text("Počet") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -195,17 +198,17 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledok1",
+                                    text = "Vysledok:  $vysledokGeo",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
                                 )
 
                                 Button(onClick = {
-                                    val a = textValue4.toDouble()
-                                    val b = textValue5.toDouble()
+                                    val a = textValueGeo1.toDouble()
+                                    val b = textValueGeo2.toDouble()
 
-                                    vysledok1 = GeoDist(a, b)
+                                    vysledokGeo = geoDist(a, b)
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
@@ -217,11 +220,11 @@ fun Kalkulacka() {
 
 
                 item {
-                    var vysledok2 by remember { mutableStateOf(0.0) }
-                    var textValue6 by remember { mutableStateOf("") }
-                    var textValue7 by remember { mutableStateOf("") }
-                    var textValue8 by remember { mutableStateOf("") }
-                    var textValue9 by remember { mutableStateOf("") }
+                    var vysledokHypGeo by remember { mutableStateOf(0.0) }
+                    var textValueHypGeo1 by remember { mutableStateOf("") }
+                    var textValueHypGeo2 by remember { mutableStateOf("") }
+                    var textValueHypGeo3 by remember { mutableStateOf("") }
+                    var textValueHypGeo4 by remember { mutableStateOf("") }
 
 
                     Box(
@@ -246,8 +249,8 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 TextField(
-                                    value = textValue6,
-                                    onValueChange = { textValue6 = it },
+                                    value = textValueHypGeo1,
+                                    onValueChange = { textValueHypGeo1 = it },
                                     label = { Text("Pi") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -256,8 +259,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue7,
-                                    onValueChange = { textValue7 = it },
+                                    value = textValueHypGeo2,
+                                    onValueChange = { textValueHypGeo2 = it },
                                     label = { Text("B") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -266,8 +269,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue8,
-                                    onValueChange = { textValue8 = it },
+                                    value = textValueHypGeo3,
+                                    onValueChange = { textValueHypGeo3 = it },
                                     label = { Text("C") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -275,8 +278,8 @@ fun Kalkulacka() {
                                     keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
                                 )
                                 TextField(
-                                    value = textValue9,
-                                    onValueChange = { textValue9 = it },
+                                    value = textValueHypGeo4,
+                                    onValueChange = { textValueHypGeo4 = it },
                                     label = { Text("D") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -292,19 +295,19 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledok2",
+                                    text = "Vysledok:  $vysledokHypGeo",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
                                 )
 
                                 Button(onClick = {
-                                    val a = textValue6.toIntOrNull() ?: 0
-                                    val b = textValue7.toIntOrNull() ?: 0
-                                    val c = textValue8.toIntOrNull() ?: 0
-                                    val d = textValue9.toIntOrNull() ?: 0
+                                    val a = textValueHypGeo1.toIntOrNull() ?: 0
+                                    val b = textValueHypGeo2.toIntOrNull() ?: 0
+                                    val c = textValueHypGeo3.toIntOrNull() ?: 0
+                                    val d = textValueHypGeo4.toIntOrNull() ?: 0
 
-                                    vysledok2 = HypGeoDist(a, b, c, d)
+                                    vysledokHypGeo = hypGeoDist(a, b, c, d)
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
@@ -314,9 +317,9 @@ fun Kalkulacka() {
                 }
 
                 item {
-                    var vysledok by remember { mutableStateOf(0.0) }
-                    var textValue1 by remember { mutableStateOf("") }
-                    var textValue2 by remember { mutableStateOf("") }
+                    var vysledokPoi by remember { mutableStateOf(0.0) }
+                    var textValuePoi1 by remember { mutableStateOf("") }
+                    var textValuePoi2 by remember { mutableStateOf("") }
 
 
                     Box(
@@ -341,8 +344,8 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 TextField(
-                                    value = textValue1,
-                                    onValueChange = { textValue1 = it },
+                                    value = textValuePoi1,
+                                    onValueChange = { textValuePoi1 = it },
                                     label = { Text("Pi") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -351,8 +354,8 @@ fun Kalkulacka() {
                                 )
 
                                 TextField(
-                                    value = textValue2,
-                                    onValueChange = { textValue2 = it },
+                                    value = textValuePoi2,
+                                    onValueChange = { textValuePoi2 = it },
                                     label = { Text("Počet") },
                                     modifier = Modifier
                                         .padding(16.dp)
@@ -368,17 +371,355 @@ fun Kalkulacka() {
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 Text(
-                                    text = "Vysledok:  $vysledok",
+                                    text = "Vysledok:  $vysledokPoi",
                                     fontSize = 15.sp,
                                     textAlign = TextAlign.Center,
                                     modifier = Modifier.padding(top = 12.dp)
                                 )
 
                                 Button(onClick = {
-                                    val a = textValue1.toDouble()
-                                    val b = textValue2.toInt()
+                                    val a = textValuePoi1.toDouble()
+                                    val b = textValuePoi2.toInt()
 
-                                    vysledok = PoissonDist(a, b)
+                                    vysledokPoi = poissonDist(a, b)
+                                }) {
+                                    Text(text = "Vypocitaj")
+                                }
+                            }
+                        }
+                    }
+                }
+
+                item {
+                    var vysledokNor by remember { mutableStateOf(0.0) }
+                    var textValueNor1 by remember { mutableStateOf("") }
+                    var textValueNor2 by remember { mutableStateOf("") }
+                    var textValueNor3 by remember { mutableStateOf("") }
+
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.White)
+                    ) {
+                        Column {
+                            Text(
+                                text = "Normalne rozdelenie",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(10.dp)
+                            )
+                            Row(
+                                modifier = Modifier
+                                    .padding(0.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                TextField(
+                                    value = textValueNor1,
+                                    onValueChange = { textValueNor1 = it },
+                                    label = { Text("Pi") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueNor2,
+                                    onValueChange = { textValueNor2 = it },
+                                    label = { Text("B") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueNor3,
+                                    onValueChange = { textValueNor3 = it },
+                                    label = { Text("C") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                Text(
+                                    text = "Vysledok:  $vysledokNor",
+                                    fontSize = 15.sp,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 12.dp)
+                                )
+
+                                Button(onClick = {
+                                    val a = textValueNor1.toDouble()
+                                    val b = textValueNor2.toDouble()
+                                    val c = textValueNor3.toDouble()
+
+                                    vysledokNor = NormalDist(a, b , c)
+                                }) {
+                                    Text(text = "Vypocitaj")
+                                }
+                            }
+                        }
+                    }
+                }
+
+                item {
+                    var vysledokRov by remember { mutableStateOf(0.0) }
+                    var textValueRov1 by remember { mutableStateOf("") }
+                    var textValueRov2 by remember { mutableStateOf("") }
+                    var textValueRov3 by remember { mutableStateOf("") }
+
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.White)
+                    ) {
+                        Column {
+                            Text(
+                                text = "Rovnomerné rozdelenie",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(10.dp)
+                            )
+                            Row(
+                                modifier = Modifier
+                                    .padding(0.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                TextField(
+                                    value = textValueRov1,
+                                    onValueChange = { textValueRov1 = it },
+                                    label = { Text("Pi") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueRov2,
+                                    onValueChange = { textValueRov2 = it },
+                                    label = { Text("B") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueRov3,
+                                    onValueChange = { textValueRov3 = it },
+                                    label = { Text("C") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                Text(
+                                    text = "Vysledok:  $vysledokRov",
+                                    fontSize = 15.sp,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 12.dp)
+                                )
+
+                                Button(onClick = {
+                                    val a = textValueRov1.toDouble()
+                                    val b = textValueRov2.toDouble()
+                                    val c = textValueRov3.toDouble()
+
+                                    vysledokRov = uniformDist(a, b , c)
+                                }) {
+                                    Text(text = "Vypocitaj")
+                                }
+                            }
+                        }
+                    }
+                }
+
+                item {
+                    var vysledokStud by remember { mutableStateOf(0.0) }
+                    var textValueStud1 by remember { mutableStateOf("") }
+                    var textValueStud2 by remember { mutableStateOf("") }
+
+
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.White)
+                    ) {
+                        Column {
+                            Text(
+                                text = "Studentovo rozdelenie",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(10.dp)
+                            )
+                            Row(
+                                modifier = Modifier
+                                    .padding(0.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                TextField(
+                                    value = textValueStud1,
+                                    onValueChange = { textValueStud1 = it },
+                                    label = { Text("Pi") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueStud2,
+                                    onValueChange = { textValueStud2 = it },
+                                    label = { Text("B") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+
+
+
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                Text(
+                                    text = "Vysledok:  $vysledokStud",
+                                    fontSize = 15.sp,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 12.dp)
+                                )
+
+                                Button(onClick = {
+                                    val a = textValueStud1.toInt()
+                                    val b = textValueStud2.toDouble()
+
+
+                                    vysledokStud = StudentovoRozdelenie(a, b)
+                                }) {
+                                    Text(text = "Vypocitaj")
+                                }
+                            }
+                        }
+                    }
+                }
+
+                item {
+                    var vysledokFis by remember { mutableStateOf(0.0) }
+                    var textValueFis1 by remember { mutableStateOf("") }
+                    var textValueFis2 by remember { mutableStateOf("") }
+                    var textValueFis3 by remember { mutableStateOf("") }
+
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.White)
+                    ) {
+                        Column {
+                            Text(
+                                text = "Fisherovo rozdelenie",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(10.dp)
+                            )
+                            Row(
+                                modifier = Modifier
+                                    .padding(0.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                TextField(
+                                    value = textValueFis1,
+                                    onValueChange = { textValueFis1 = it },
+                                    label = { Text("Pi") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueFis2,
+                                    onValueChange = { textValueFis2 = it },
+                                    label = { Text("B") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+                                TextField(
+                                    value = textValueFis3,
+                                    onValueChange = { textValueFis3 = it },
+                                    label = { Text("B") },
+                                    modifier = Modifier
+                                        .padding(16.dp)
+                                        .width(80.dp),
+                                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                                )
+
+
+
+
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceEvenly
+                            ) {
+                                Text(
+                                    text = "Vysledok:  $vysledokFis",
+                                    fontSize = 15.sp,
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(top = 12.dp)
+                                )
+
+                                Button(onClick = {
+                                    val a = textValueFis1.toInt()
+                                    val b = textValueFis2.toInt()
+                                    val c = textValueFis3.toDouble()
+
+                                    vysledokFis = FisherovoSnedecorovoRozdelenie(a, b, c)
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
@@ -392,31 +733,31 @@ fun Kalkulacka() {
 }
 
 
-fun BinomDist(pokusy: Int, pravdepodobnost: Double, uspechy: Int): Double {
-    val Kombinacia = Faktorial(pokusy) / (Faktorial(uspechy) * Faktorial(pokusy - uspechy))
-    return Kombinacia * Math.pow(pravdepodobnost, uspechy.toDouble()) * Math.pow(1 - pravdepodobnost, (pokusy - uspechy).toDouble())
+fun binomDist(pokusy: Int?, pravdepodobnost: Double?, uspechy: Int?): Double {
+    if (pokusy == null || pravdepodobnost == null || uspechy == null) return 0.0
+    val kombinacia = faktorial(pokusy) / (faktorial(uspechy) * faktorial(pokusy - uspechy))
+    return kombinacia * Math.pow(pravdepodobnost, uspechy.toDouble()) * (1 - pravdepodobnost).pow((pokusy - uspechy).toDouble())
 }
 
-fun Faktorial(n: Int): Int {
-    return if (n == 0) 1 else n * Faktorial(n - 1)
+fun faktorial(n: Int?): Int {
+    if (n == null) return 1
+    return if (n == 0) 1 else n * faktorial(n - 1)
 }
 
-fun GeoDist(lambda: Double, x: Double): Double {
-    return if (x < 0) {
-        0.0
-    } else {
-        lambda * exp(-lambda * x)
-    }
+fun geoDist(lambda: Double?, x: Double?): Double {
+    if (lambda == null || x == null || x < 0) return 0.0
+    return lambda * exp(-lambda * x)
 }
 
-
-fun HypGeoDist(velkostPopulacie: Int, pocetUspechov: Int, velkostVzorky: Int, pocetVyzrebovanychUspechov: Int): Double {
-    val citatel = Kombinacia(pocetUspechov, pocetVyzrebovanychUspechov) * Kombinacia(velkostPopulacie - pocetUspechov, velkostVzorky - pocetVyzrebovanychUspechov)
-    val menovatel = Kombinacia(velkostPopulacie, velkostVzorky)
+fun hypGeoDist(velkostPopulacie: Int?, pocetUspechov: Int?, velkostVzorky: Int?, pocetVyzrebovanychUspechov: Int?): Double {
+    if (velkostPopulacie == null || pocetUspechov == null || velkostVzorky == null || pocetVyzrebovanychUspechov == null) return 0.0
+    val citatel = kombinacia(pocetUspechov, pocetVyzrebovanychUspechov) * kombinacia(velkostPopulacie - pocetUspechov, velkostVzorky - pocetVyzrebovanychUspechov)
+    val menovatel = kombinacia(velkostPopulacie, velkostVzorky)
     return citatel.toDouble() / menovatel.toDouble()
 }
 
-fun Kombinacia(n: Int, k: Int): Long {
+fun kombinacia(n: Int?, k: Int?): Long {
+    if (n == null || k == null) return 0
     var vysledok: Long = 1
     for (i in 1..k) {
         vysledok = vysledok * (n - i + 1) / i
@@ -424,6 +765,46 @@ fun Kombinacia(n: Int, k: Int): Long {
     return vysledok
 }
 
-fun PoissonDist(lamda: Double, k: Int): Double {
-    return (Math.pow(lamda, k.toDouble()) * Math.exp(-lamda)) / Faktorial(k)
+fun poissonDist(lamda: Double?, k: Int?): Double {
+    if (lamda == null || k == null) return 0.0
+    return (Math.pow(lamda, k.toDouble()) * Math.exp(-lamda)) / faktorial(k)
+}
+
+fun NormalDist(mean: Double?, stdDev: Double?, x: Double?): Double {
+    if (mean == null || stdDev == null || x == null) return 0.0
+    val exponent = -(x - mean).pow(2) / (2 * stdDev.pow(2))
+    return (1 / (stdDev * sqrt(2 * Math.PI))) * exp(exponent)
+}
+
+fun uniformDist(min: Double?, max: Double?, x: Double?): Double {
+    if (min == null || max == null || x == null) return 0.0
+    return if (x in min..max) 1 / (max - min) else 0.0
+}
+
+fun StudentovoRozdelenie(df: Int?, x: Double?): Double {
+    if (df == null || x == null) return 0.0
+
+    val citatel = gamma((df + 1) / 2.0)
+    val menovatel = sqrt(df * Math.PI) * gamma(df / 2.0)
+    val koeficient = citatel / menovatel
+    val exponent = -(df + 1) / 2.0
+
+    return koeficient * (1 + x.pow(2.0) / df).pow(exponent)
+}
+
+fun gamma(x: Double): Double {
+    if (x == 1.0) return 1.0
+    if (x == 0.5) return sqrt(Math.PI)
+    return (x - 1) * gamma(x - 1)
+}
+
+fun FisherovoSnedecorovoRozdelenie(df1: Int?, df2: Int?, x: Double?): Double {
+    if (df1 == null || df2 == null || x == null || x <= 0) return 0.0
+
+    val citatel = gamma((df1 + df2) / 2.0)
+    val menovatel = gamma(df1 / 2.0) * gamma(df2 / 2.0)
+    val exponencialnyExponent = (df1 * ln(df1 * x / (df1 * x + df2))).pow(df1 / 2.0)
+    val koeficient = sqrt((df1 / df2).toDouble()) / (x * citatel / menovatel)
+
+    return koeficient * exponencialnyExponent
 }

@@ -127,12 +127,6 @@ fun TemaScreen(navController: NavController, topic: Int?) {
                 ) {
 
                     Button(onClick = {
-                        navController.navigate("quiz")
-                    }) {
-                        Text(text = "Quiz")
-                    }
-
-                    Button(onClick = {
                         navController.navigate("kalkulacka")
                     }) {
                         Text(text = "Kalkulačka")
