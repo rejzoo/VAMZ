@@ -1,7 +1,7 @@
-package com.example.semstralka_vamz_foltan.ui.theme
+package com.example.semstralka_vamz_foltan.sampledata
 
 import android.content.Context
-import com.example.semstralka_vamz_foltan.R
+
 
 data class DataPriklad(val topicNumber: Int? , val context: Context) {
     val textPriklad: String = getTextFromRes()

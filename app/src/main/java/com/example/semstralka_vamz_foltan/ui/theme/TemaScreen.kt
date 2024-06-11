@@ -1,4 +1,4 @@
-package com.example.semstralka_vamz_foltan
+package com.example.semstralka_vamz_foltan.ui.theme
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,8 +23,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.semstralka_vamz_foltan.ui.theme.DataTema
-import com.example.semstralka_vamz_foltan.ui.theme.DataText
+import com.example.semstralka_vamz_foltan.R
+import com.example.semstralka_vamz_foltan.sampledata.DataTema
+import com.example.semstralka_vamz_foltan.sampledata.DataText
 
 
 

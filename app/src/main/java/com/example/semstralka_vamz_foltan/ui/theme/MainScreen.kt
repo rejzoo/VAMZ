@@ -1,4 +1,4 @@
-package com.example.semstralka_vamz_foltan
+package com.example.semstralka_vamz_foltan.ui.theme
 
 
 import androidx.compose.runtime.Composable
@@ -7,6 +7,6 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
+fun MainScreen(navController: NavController) {
     VyberTemy(navController = navController)
 }

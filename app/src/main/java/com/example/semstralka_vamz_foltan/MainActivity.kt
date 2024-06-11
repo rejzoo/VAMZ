@@ -5,12 +5,9 @@ package com.example.semstralka_vamz_foltan
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.ui.platform.LocalContext
 
 
-
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 
 
@@ -20,10 +17,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 
-import com.example.semstralka_vamz_foltan.ui.theme.DataPriklad
+import com.example.semstralka_vamz_foltan.sampledata.DataPriklad
 import com.example.semstralka_vamz_foltan.ui.theme.Kalkulacka
+import com.example.semstralka_vamz_foltan.ui.theme.MainScreen
 import com.example.semstralka_vamz_foltan.ui.theme.Priklad
 import com.example.semstralka_vamz_foltan.ui.theme.Semstralka_VAMZ_FoltanTheme
+import com.example.semstralka_vamz_foltan.ui.theme.TemaScreen
+import com.example.semstralka_vamz_foltan.ui.theme.VyberTemy
 
 class MainActivity : ComponentActivity() {
 

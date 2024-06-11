@@ -1,7 +1,5 @@
-package com.example.semstralka_vamz_foltan.ui.theme
+package com.example.semstralka_vamz_foltan.sampledata
 
-
-import com.example.semstralka_vamz_foltan.R
 import android.content.Context
 
 data class DataTema(val topicNumber: Int? , val context: Context) {
