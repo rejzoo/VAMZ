@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -31,6 +34,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.semstralka_vamz_foltan.R
+import java.text.DecimalFormat
 import kotlin.math.exp
 import kotlin.math.ln
 import kotlin.math.pow
@@ -38,7 +42,7 @@ import kotlin.math.sqrt
 
 @Composable
 fun Kalkulacka() {
-    var vysledokBin by remember { mutableStateOf(0.0) }
+    var vysledokBin by remember { mutableDoubleStateOf(0.0) }
     var textValueBin by remember { mutableStateOf("") }
     var textValueBin2 by remember { mutableStateOf("") }
     var textValueBin3 by remember { mutableStateOf("") }
@@ -64,7 +68,7 @@ fun Kalkulacka() {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 50.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                    .padding(top = 50.dp, bottom = 50.dp, start = 16.dp, end = 16.dp)
             ) {
                 item {
                     Box(
@@ -131,20 +135,24 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val x = textValueBin.toIntOrNull() ?: 0
-                                    val z = textValueBin2.toDouble()
-                                    val y = textValueBin3.toIntOrNull() ?: 0
-                                    vysledokBin = binomDist(x, z, y)
+                                    val x = textValueBin.toIntOrNull()
+                                    val z = textValueBin2.toDoubleOrNull()
+                                    val y = textValueBin3.toIntOrNull()
+                                    vysledokBin = zaokruhliNaDveDesatinneCisla(binomDist(x, z, y))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
+
+
                 item {
-                    var vysledokGeo by remember { mutableStateOf(0.0) }
+                    var vysledokGeo by remember { mutableDoubleStateOf(0.0) }
                     var textValueGeo1 by remember { mutableStateOf("") }
                     var textValueGeo2 by remember { mutableStateOf("") }
 
@@ -205,22 +213,24 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValueGeo1.toDouble()
-                                    val b = textValueGeo2.toDouble()
+                                    val a = textValueGeo1.toDoubleOrNull()
+                                    val b = textValueGeo2.toDoubleOrNull()
 
-                                    vysledokGeo = geoDist(a, b)
+                                    vysledokGeo = zaokruhliNaDveDesatinneCisla(geoDist(a, b))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
 
 
                 item {
-                    var vysledokHypGeo by remember { mutableStateOf(0.0) }
+                    var vysledokHypGeo by remember { mutableDoubleStateOf(0.0) }
                     var textValueHypGeo1 by remember { mutableStateOf("") }
                     var textValueHypGeo2 by remember { mutableStateOf("") }
                     var textValueHypGeo3 by remember { mutableStateOf("") }
@@ -307,17 +317,20 @@ fun Kalkulacka() {
                                     val c = textValueHypGeo3.toIntOrNull() ?: 0
                                     val d = textValueHypGeo4.toIntOrNull() ?: 0
 
-                                    vysledokHypGeo = hypGeoDist(a, b, c, d)
+                                    vysledokHypGeo = zaokruhliNaDveDesatinneCisla(hypGeoDist(a, b, c, d))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
+
                 item {
-                    var vysledokPoi by remember { mutableStateOf(0.0) }
+                    var vysledokPoi by remember { mutableDoubleStateOf(0.0) }
                     var textValuePoi1 by remember { mutableStateOf("") }
                     var textValuePoi2 by remember { mutableStateOf("") }
 
@@ -378,20 +391,22 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValuePoi1.toDouble()
+                                    val a = textValuePoi1.toDoubleOrNull()
                                     val b = textValuePoi2.toInt()
 
-                                    vysledokPoi = poissonDist(a, b)
+                                    vysledokPoi = zaokruhliNaDveDesatinneCisla(poissonDist(a, b))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
                 item {
-                    var vysledokNor by remember { mutableStateOf(0.0) }
+                    var vysledokNor by remember { mutableDoubleStateOf(0.0) }
                     var textValueNor1 by remember { mutableStateOf("") }
                     var textValueNor2 by remember { mutableStateOf("") }
                     var textValueNor3 by remember { mutableStateOf("") }
@@ -463,21 +478,23 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValueNor1.toDouble()
-                                    val b = textValueNor2.toDouble()
-                                    val c = textValueNor3.toDouble()
+                                    val a = textValueNor1.toDoubleOrNull()
+                                    val b = textValueNor2.toDoubleOrNull()
+                                    val c = textValueNor3.toDoubleOrNull()
 
-                                    vysledokNor = NormalDist(a, b , c)
+                                    vysledokNor = zaokruhliNaDveDesatinneCisla(normalDist(a, b , c))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
                 item {
-                    var vysledokRov by remember { mutableStateOf(0.0) }
+                    var vysledokRov by remember { mutableDoubleStateOf(0.0) }
                     var textValueRov1 by remember { mutableStateOf("") }
                     var textValueRov2 by remember { mutableStateOf("") }
                     var textValueRov3 by remember { mutableStateOf("") }
@@ -549,21 +566,23 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValueRov1.toDouble()
-                                    val b = textValueRov2.toDouble()
-                                    val c = textValueRov3.toDouble()
+                                    val a = textValueRov1.toDoubleOrNull()
+                                    val b = textValueRov2.toDoubleOrNull()
+                                    val c = textValueRov3.toDoubleOrNull()
 
-                                    vysledokRov = uniformDist(a, b , c)
+                                    vysledokRov = zaokruhliNaDveDesatinneCisla(uniformDist(a, b , c))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
                 item {
-                    var vysledokStud by remember { mutableStateOf(0.0) }
+                    var vysledokStud by remember { mutableDoubleStateOf(0.0) }
                     var textValueStud1 by remember { mutableStateOf("") }
                     var textValueStud2 by remember { mutableStateOf("") }
 
@@ -628,20 +647,22 @@ fun Kalkulacka() {
 
                                 Button(onClick = {
                                     val a = textValueStud1.toInt()
-                                    val b = textValueStud2.toDouble()
+                                    val b = textValueStud2.toDoubleOrNull()
 
 
-                                    vysledokStud = StudentovoRozdelenie(a, b)
+                                    vysledokStud = zaokruhliNaDveDesatinneCisla(studentovoRozdelenie(a, b))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
 
                 item {
-                    var vysledokFis by remember { mutableStateOf(0.0) }
+                    var vysledokFis by remember { mutableDoubleStateOf(0.0) }
                     var textValueFis1 by remember { mutableStateOf("") }
                     var textValueFis2 by remember { mutableStateOf("") }
                     var textValueFis3 by remember { mutableStateOf("") }
@@ -691,16 +712,12 @@ fun Kalkulacka() {
                                 TextField(
                                     value = textValueFis3,
                                     onValueChange = { textValueFis3 = it },
-                                    label = { Text("B") },
+                                    label = { Text("C") },
                                     modifier = Modifier
                                         .padding(16.dp)
                                         .width(80.dp),
                                     keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
                                 )
-
-
-
-
                             }
 
                             Row(
@@ -715,17 +732,19 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValueFis1.toInt()
-                                    val b = textValueFis2.toInt()
-                                    val c = textValueFis3.toDouble()
+                                    val a = textValueFis1.toIntOrNull()
+                                    val b = textValueFis2.toIntOrNull()
+                                    val c = textValueFis3.toDoubleOrNull()
 
-                                    vysledokFis = FisherovoSnedecorovoRozdelenie(a, b, c)
+                                    vysledokFis = zaokruhliNaDveDesatinneCisla(fisherovoSnedecorovoRozdelenie(a, b, c))
                                 }) {
                                     Text(text = "Vypocitaj")
                                 }
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
         }
@@ -767,10 +786,10 @@ fun kombinacia(n: Int?, k: Int?): Long {
 
 fun poissonDist(lamda: Double?, k: Int?): Double {
     if (lamda == null || k == null) return 0.0
-    return (Math.pow(lamda, k.toDouble()) * Math.exp(-lamda)) / faktorial(k)
+    return (Math.pow(lamda, k.toDouble()) * exp(-lamda)) / faktorial(k)
 }
 
-fun NormalDist(mean: Double?, stdDev: Double?, x: Double?): Double {
+fun normalDist(mean: Double?, stdDev: Double?, x: Double?): Double {
     if (mean == null || stdDev == null || x == null) return 0.0
     val exponent = -(x - mean).pow(2) / (2 * stdDev.pow(2))
     return (1 / (stdDev * sqrt(2 * Math.PI))) * exp(exponent)
@@ -781,7 +800,7 @@ fun uniformDist(min: Double?, max: Double?, x: Double?): Double {
     return if (x in min..max) 1 / (max - min) else 0.0
 }
 
-fun StudentovoRozdelenie(df: Int?, x: Double?): Double {
+fun studentovoRozdelenie(df: Int?, x: Double?): Double {
     if (df == null || x == null) return 0.0
 
     val citatel = gamma((df + 1) / 2.0)
@@ -798,7 +817,7 @@ fun gamma(x: Double): Double {
     return (x - 1) * gamma(x - 1)
 }
 
-fun FisherovoSnedecorovoRozdelenie(df1: Int?, df2: Int?, x: Double?): Double {
+fun fisherovoSnedecorovoRozdelenie(df1: Int?, df2: Int?, x: Double?): Double {
     if (df1 == null || df2 == null || x == null || x <= 0) return 0.0
 
     val citatel = gamma((df1 + df2) / 2.0)
@@ -807,4 +826,9 @@ fun FisherovoSnedecorovoRozdelenie(df1: Int?, df2: Int?, x: Double?): Double {
     val koeficient = sqrt((df1 / df2).toDouble()) / (x * citatel / menovatel)
 
     return koeficient * exponencialnyExponent
+}
+
+fun zaokruhliNaDveDesatinneCisla(cislo: Double): Double {
+    val format = DecimalFormat("#.##")
+    return format.format(cislo).toDouble()
 }
