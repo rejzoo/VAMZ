@@ -392,7 +392,7 @@ fun Kalkulacka() {
 
                                 Button(onClick = {
                                     val a = textValuePoi1.toDoubleOrNull()
-                                    val b = textValuePoi2.toInt()
+                                    val b = textValuePoi2.toIntOrNull()
 
                                     vysledokPoi = zaokruhliNaDveDesatinneCisla(poissonDist(a, b))
                                 }) {
@@ -646,7 +646,7 @@ fun Kalkulacka() {
                                 )
 
                                 Button(onClick = {
-                                    val a = textValueStud1.toInt()
+                                    val a = textValueStud1.toIntOrNull()
                                     val b = textValueStud2.toDoubleOrNull()
 
 
@@ -755,12 +755,16 @@ fun Kalkulacka() {
 fun binomDist(pokusy: Int?, pravdepodobnost: Double?, uspechy: Int?): Double {
     if (pokusy == null || pravdepodobnost == null || uspechy == null) return 0.0
     val kombinacia = faktorial(pokusy) / (faktorial(uspechy) * faktorial(pokusy - uspechy))
-    return kombinacia * Math.pow(pravdepodobnost, uspechy.toDouble()) * (1 - pravdepodobnost).pow((pokusy - uspechy).toDouble())
+    return kombinacia.toDouble() * pravdepodobnost.pow(uspechy) * (1 - pravdepodobnost).pow(pokusy - uspechy)
 }
 
-fun faktorial(n: Int?): Int {
+fun faktorial(n: Int?): Long {
     if (n == null) return 1
-    return if (n == 0) 1 else n * faktorial(n - 1)
+    var fact: Long = 1
+    for (i in 1..n) {
+        fact *= i
+    }
+    return fact
 }
 
 fun geoDist(lambda: Double?, x: Double?): Double {
