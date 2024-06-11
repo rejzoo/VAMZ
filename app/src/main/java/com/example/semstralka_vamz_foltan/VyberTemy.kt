@@ -47,7 +47,8 @@ fun VyberTemy(navController: NavController) {
         6,
         7,
         8,
-        9
+        9,
+        10
     )
 
     Surface(

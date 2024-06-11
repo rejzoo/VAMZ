@@ -133,7 +133,7 @@ fun TemaScreen(navController: NavController, topic: Int?) {
                     }
 
                     Button(onClick = {
-                        topic?.let { navController.navigate("kalkulacka/$it") }
+                        navController.navigate("kalkulacka")
                     }) {
                         Text(text = "Kalkulačka")
                     }

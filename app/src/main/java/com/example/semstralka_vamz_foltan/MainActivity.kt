@@ -51,9 +51,7 @@ class MainActivity : ComponentActivity() {
                         ) { backStackEntry ->
                             val cisloPrikladu = backStackEntry.arguments?.getString("topic")
                         Priklad(DataPriklad(cisloPrikladu?.toInt() , LocalContext.current)) }
-
-
-                    //composable("Quiz") { Quiz(navController) }
+                    composable("Kalkulacka") { Kalkulacka() }
 
 
                 }
