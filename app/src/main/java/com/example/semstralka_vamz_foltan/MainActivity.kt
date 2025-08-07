@@ -1,15 +1,11 @@
 package com.example.semstralka_vamz_foltan
 
-
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.ui.platform.LocalContext
 
-
 import androidx.activity.enableEdgeToEdge
-
 
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -57,13 +53,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
